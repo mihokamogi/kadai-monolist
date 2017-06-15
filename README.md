@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+モノリストというアプリです。
+楽天 API を利用して、楽天の商品を検索してその商品を共有するアプリケーションになります。
 
-Things you may want to cover:
+ 機能一覧
 
-* Ruby version
+* ユーザ登録／ログイン認証機能
+* 楽天市場の商品検索
+* 商品を Want, Have する
+* Want, Have された商品の一覧表示
+* Want, Have のランキング
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+作成したアプリ
+http://monolist-kadaiversion.herokuapp.com/
