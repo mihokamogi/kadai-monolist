@@ -9,11 +9,11 @@ class OwnershipsController < ApplicationController
       @item.save
     end
     
-    if params[:type] == "want"
+    if params[:type] == "Want"
       current_user.want(@item)
       flash[:success] = "商品をwantしました。"
     
-    elsif params[:type] == "have"
+    elsif params[:type] == "Have"
       current_user.have(@item)
       flash[:success] = "商品をhaveしました。"
     end
@@ -24,10 +24,10 @@ class OwnershipsController < ApplicationController
   def destroy
     @item = Item.find(params[:item_id])
     
-    if params[:type] == "want"
+    if params[:type] == "Want"
       current_user.unwant(@item)
       flash[:success] = "商品のwantを解除しました。"
-    elsif params[:type] == "have"
+    elsif params[:type] == "Have"
       current_user.unhave(@item)
       flash[:success] = "商品のhaveを解除しました。"
     end
