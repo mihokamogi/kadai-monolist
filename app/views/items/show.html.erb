@@ -3,13 +3,14 @@
     <div class="item">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          <img src="<%= @item.image.url %>" alt="">
+          <img src="<%= @item.image_url %>" alt="">
         </div>
         <div class="panel-body">
           <p class="item-title"><%= @item.name %></p>
           <div class="buttons tect-center">
-            <%= if logged_in? %>
-              <%= render "ownerships/want-button", item: @item %>
+            <% if logged_in? %>
+              <%= render "ownerships/want_button", item: @item %>
+              <%= render "ownerships/have_button", item: @item %>
             <% end %>
            </div>
         </div>
@@ -21,8 +22,8 @@
     <div class="want-users">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          wantしたユーザ
-        <div>
+          Wantしたユーザ
+        </div>
         <div class="panel-body">
           <% @want_users.each do |user| %>
             <%= link_to user.name, user_path(user) %>
@@ -36,9 +37,12 @@
           Haveしたユーザ
         </div>
         <div class="panel-body">
+          <% @have_users.each do |user| %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
         </div>
       </div>
     </div>
     <p class="text-center"><%= link_to "楽天詳細ページ", @item.url, target: "_blank" %></p>
   </div>
-<div>
+</div>
